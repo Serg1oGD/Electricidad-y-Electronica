@@ -1,0 +1,93 @@
+.home {
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  min-height: 300px;
+}
+
+.content-section h2 {
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 2rem;
+}
+
+.avisos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.aviso-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.aviso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aviso-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.aviso-card p {
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+  }
+}
+
+.about-section {
+    margin-top: 6rem;
+    padding-top: 2rem;
+}
