@@ -1,13 +1,25 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, LogIn, LogOut } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 import './Header.css';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+    const handleLogout = async () => {
+        try {
+            await logout();
+            setIsMenuOpen(false);
+            navigate('/');
+        } catch (err) {
+            console.error('Error al cerrar sesion:', err);
+        }
     };
 
     return (
@@ -33,6 +45,20 @@ function Header() {
                     <Link to="/laboratorios" onClick={() => setIsMenuOpen(false)}>Laboratios</Link>
                     <Link to="/avisos" onClick={() => setIsMenuOpen(false)}>Avisos</Link>
                     <Link to="/contactos" onClick={() => setIsMenuOpen(false)}>Contastos</Link>
+
+                    {currentUser ? (
+                        <button onClick={handleLogout} className="logout-btn">
+                            <LogOut size={18}>
+                                Cerrar Sesion
+                            </LogOut>
+                        </button>
+                    ) : (
+                        <Link to="/login" onClick={() => setIsMenuOpen(false)} className="login-link">
+                            <LogIn size={18}>
+                                Maestros
+                            </LogIn>
+                        </Link>
+                    )}
                 </nav>
             </div>
         </header>
