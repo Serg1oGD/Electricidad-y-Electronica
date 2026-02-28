@@ -37,7 +37,7 @@ function Login() {
                 {error && <div className="error-message">{error}</div>}
 
                 <form onSubmit={handleSubmit}>
-                    <div className="form-gruop">
+                    <div className="form-group">
                         <label>Correo Electronico</label>
                         <input 
                         type="email"
