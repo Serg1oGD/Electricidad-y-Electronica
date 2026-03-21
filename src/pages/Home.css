@@ -13,12 +13,14 @@
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .content-section {
@@ -54,7 +56,7 @@
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .aviso-card:hover {
@@ -71,9 +73,44 @@
 .aviso-card p {
   color: #6b7280;
   margin: 0;
+  font-size: 1rem;
 }
 
+.about-section {
+  margin-top: 6rem;
+  padding-top: 2rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .content-section {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Móvil */
 @media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -82,12 +119,57 @@
     font-size: 1rem;
   }
 
-  .hero {
-    padding: 4rem 1rem;
+  .content-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+  }
+
+  .avisos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .aviso-card {
+    padding: 1.5rem;
+  }
+
+  .about-section {
+    margin-top: 3rem;
   }
 }
 
-.about-section {
-    margin-top: 6rem;
-    padding-top: 2rem;
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .content-section {
+    padding: 0 0.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .aviso-card {
+    padding: 1.25rem;
+  }
 }
