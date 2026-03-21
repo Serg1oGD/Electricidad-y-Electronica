@@ -226,7 +226,7 @@
   }
 
   .title-section p {
-    display: none; /* Oculta el subtítulo en pantallas muy pequeñas */
+    display: none; 
   }
 
   .logo {
