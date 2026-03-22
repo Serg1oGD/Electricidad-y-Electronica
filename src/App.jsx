@@ -5,6 +5,8 @@ import Footer from './components/Layout/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import './App.css'
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminPanel from './pages/AdminPanel';
 
 function App() {
   return (
@@ -16,6 +18,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={
+                <ProtectedRoute>
+                  <AdminPanel />
+                </ProtectedRoute>
+              }/>
               {/* Aquí agregaremos más rutas después */}
             </Routes>
           </main>
