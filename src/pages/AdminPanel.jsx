@@ -58,7 +58,7 @@ function AdminPanel() {
                         <BookOpen size={20}/>
                         Plan de Estudios
                     </button>
-                    <button className={`adimn-nav-item ${activeSection === 'profesores' ? 'active' : ''}`}onClick={() => setActiveSection('profesores')}
+                    <button className={`admin-nav-item ${activeSection === 'profesores' ? 'active' : ''}`}onClick={() => setActiveSection('profesores')}
                     >
                         <User size={20}/>
                         Profesores
@@ -137,7 +137,7 @@ function AdminPanel() {
                         <p>Gestion de la informacion de los laboratorios</p>
                     </div>
                 )}
-                {activeSection === 'configuraciones' && (
+                {activeSection === 'configuracion' && (
                     <div className="admin-section">
                         <h1>Configuraciones</h1>
                         <p>Configuraciones generales del sito</p>

@@ -13,7 +13,7 @@ function Login() {
     const navigate = useNavigate();
 
     async function handleSubmit(e){
-        e.preventDefalut();
+        e.preventDefault();
 
         try {
             setError('');

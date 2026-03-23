@@ -18,11 +18,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/admin" element={
+              <Route path="/admin" 
+              element={
                 <ProtectedRoute>
                   <AdminPanel />
                 </ProtectedRoute>
-              }/>
+              }
+              />
               {/* Aquí agregaremos más rutas después */}
             </Routes>
           </main>
