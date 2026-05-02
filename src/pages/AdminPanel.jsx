@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GestionAvisos from './Admin/GestionAvisos';
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {
@@ -14,6 +15,8 @@ import {
     Users
 } from 'lucide-react';
 import './AdminPanel.css';
+import GestionCarrera from "./Admin/GestionCarrera";
+import GestionProfesores from "./Admin/GestionProfesores";
 
 function AdminPanel() {
     const { currentUser, logout } = useAuth();
@@ -110,13 +113,14 @@ function AdminPanel() {
                     <div className="admin-section">
                         <h1>Gestion de Avisos</h1>
                         <p>Aqui podresa crear, editar y eliminar avisos.</p>
-                        {/* */}
+                        {activeSection === 'avisos' && <GestionAvisos />}
                     </div>
                 )}
                 {activeSection === 'carrera' && (
                     <div className="admin-section">
                         <h1>Acerca de la Carrera</h1>
                         <p>Aqui se Edita la informacion sobre el departamento</p>
+                        {activeSection === 'carrera' && <GestionCarrera />}
                     </div>
                 )}
                 {activeSection === 'plan' && (
@@ -129,6 +133,7 @@ function AdminPanel() {
                     <div className="admin-section">
                         <h1>Profesores</h1>
                         <p>Gestion de los prefiles de los profesores</p>
+                        {activeSection === 'profesores' && <GestionProfesores />}
                     </div>
                 )}
                 {activeSection === 'laboratorios' && (
