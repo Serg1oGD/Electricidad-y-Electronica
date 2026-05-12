@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { collection, addDoc, getDoc, deleteDoc, doc, updateDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, deleteDoc, doc, updateDoc, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/config';
 import { Trash2, Edit2, Plus, Save, X } from "lucide-react";
 
