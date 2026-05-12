@@ -89,8 +89,8 @@ const cargarAvisos = useCallback(async () => {
     setEditingId(null);
   };
     useEffect(() => {
-        cargarAvisos();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      cargarAvisos();
   }, [cargarAvisos]);
 
   return (

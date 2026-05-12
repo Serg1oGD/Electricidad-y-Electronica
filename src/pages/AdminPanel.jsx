@@ -17,6 +17,8 @@ import {
 import './AdminPanel.css';
 import GestionCarrera from "./Admin/GestionCarrera";
 import GestionProfesores from "./Admin/GestionProfesores";
+import GestionPlanEstudios from "./Admin/GestionPlanEstudios";
+import GestionLaboratorios from "./Admin/GestionLaboratorios";
 
 function AdminPanel() {
     const { currentUser, logout } = useAuth();
@@ -127,6 +129,7 @@ function AdminPanel() {
                     <div className="admin-section">
                         <h1>Plan de Estudio</h1>
                         <p>Actualiza el plan de estudios y material</p>
+                        {activeSection === 'plan' && <GestionPlanEstudios />}
                     </div>
                 )}
                 {activeSection === 'profesores' && (
@@ -140,6 +143,7 @@ function AdminPanel() {
                     <div className="admin-section">
                         <h1>Laboratorios</h1>
                         <p>Gestion de la informacion de los laboratorios</p>
+                        {activeSection === 'laboratorios' && <GestionLaboratorios/>}
                     </div>
                 )}
                 {activeSection === 'configuracion' && (

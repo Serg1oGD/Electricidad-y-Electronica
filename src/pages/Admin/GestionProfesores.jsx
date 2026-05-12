@@ -32,8 +32,9 @@ function GestionProfesores() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     cargarProfesores();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [cargarProfesores]);
 
   const handleSubmit = async (e) => {

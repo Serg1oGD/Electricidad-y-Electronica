@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { collection, addDoc, getDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { collection, addDoc, getDoc, deleteDoc, doc, updateDoc, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/config';
 import { Trash2, Edit2, Plus, Save, X } from "lucide-react";
 
@@ -20,7 +20,7 @@ function GestionLaboratorios() {
 
     const cargarLaboratorios = useCallback(async () => {
         try{
-            const querySnapshot = await getDoc(collection(db, 'laboratorios'));
+            const querySnapshot = await getDocs(collection(db, 'laboratorios'));
             const laboratoriosData = querySnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
@@ -400,3 +400,4 @@ function GestionLaboratorios() {
   );
 
 }
+export default GestionLaboratorios;
