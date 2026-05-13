@@ -19,7 +19,7 @@ function Login() {
             setError('');
             setLoading(true);
             await login(email, password);
-            navigate('/');
+            navigate('/admin');
         } catch (err) {
             setError('Credenciales incorrectas. Solo maestros autorizados pueden acceder.');
             console.error('Error de login:', err)

@@ -19,6 +19,7 @@ import GestionCarrera from "./Admin/GestionCarrera";
 import GestionProfesores from "./Admin/GestionProfesores";
 import GestionPlanEstudios from "./Admin/GestionPlanEstudios";
 import GestionLaboratorios from "./Admin/GestionLaboratorios";
+import Configuraciones from "./Admin/Configuraciones";
 
 function AdminPanel() {
     const { currentUser, logout } = useAuth();
@@ -150,6 +151,7 @@ function AdminPanel() {
                     <div className="admin-section">
                         <h1>Configuraciones</h1>
                         <p>Configuraciones generales del sito</p>
+                        {activeSection === 'configuracion' && <Configuraciones/>}
                     </div>
                 )}
             </main>
