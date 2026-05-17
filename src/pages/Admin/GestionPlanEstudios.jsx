@@ -16,10 +16,11 @@ function GestionPlanEstudios(){
         nombre: '',
         creditos: ''
     });
-    const [loading, setLoading] = useState(false);
-  const [guardando, setGuardando] = useState(false);
 
-  const GestionPlanEstudios = useCallback(async () => {
+    const [loading, setLoading] = useState(false);
+    const [guardando, setGuardando] = useState(false);
+
+  const cargarDatos = useCallback(async () => {
     setLoading(true);
     try {
       const docRef = doc(db, 'configuracion', 'planEstudios');
@@ -36,9 +37,8 @@ function GestionPlanEstudios(){
   }, []);
 
   useEffect(() => {
-        GestionPlanEstudios();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [GestionPlanEstudios]);
+    cargarDatos();
+  }, [cargarDatos]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
