@@ -1,24 +1,23 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from 'react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
-import { Save, Plus, Trash2 } from "lucide-react";
+import { Save, Plus, Trash2 } from 'lucide-react';
 
-function GestionPlanEstudios(){
-    const[formData, setFormData] = useState({
-        duracion: '9 semenestres',
-        creditos: '240 creditos',
-        mobilidad: 'Escolarizada',
-        descripcion: '',
-        materias: []
-    });
-    const [ nuevaMateria, setNuevaMateria ] = useState({
-        semestre: '1',
-        nombre: '',
-        creditos: ''
-    });
-
-    const [loading, setLoading] = useState(false);
-    const [guardando, setGuardando] = useState(false);
+function GestionPlanEstudios() {
+  const [formData, setFormData] = useState({
+    duracion: '9 semestres',
+    creditos: '240 créditos',
+    modalidad: 'Escolarizada',
+    descripcion: '',
+    materias: []
+  });
+  const [nuevaMateria, setNuevaMateria] = useState({
+    semestre: '1',
+    nombre: '',
+    creditos: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [guardando, setGuardando] = useState(false);
 
   const cargarDatos = useCallback(async () => {
     setLoading(true);
@@ -37,6 +36,7 @@ function GestionPlanEstudios(){
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     cargarDatos();
   }, [cargarDatos]);
 
@@ -366,4 +366,5 @@ function GestionPlanEstudios(){
     </div>
   );
 }
+
 export default GestionPlanEstudios;

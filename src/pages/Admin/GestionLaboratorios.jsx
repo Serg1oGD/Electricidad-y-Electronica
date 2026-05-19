@@ -26,6 +26,7 @@ function GestionLaboratorios() {
                 ...doc.data()
             }));
             laboratoriosData.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            setLaboratorios(laboratoriosData);
         }catch (error) {
             console.error('Error al cargar los laboratorios:', error)
             alert('Error al cargar los laboratorios:' + error.message);
@@ -33,12 +34,13 @@ function GestionLaboratorios() {
     }, []);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         cargarLaboratorios();
     }, [cargarLaboratorios]);
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        setLaboratorios(true);
+        setLoading(true);
         try {
             if (editingId){
                 await updateDoc(doc(db, 'laboratorios', editingId), formData);

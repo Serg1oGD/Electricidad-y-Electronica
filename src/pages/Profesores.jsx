@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from '../firebase/config';
 import { Mail, Clock } from 'lucide-react';
 import './Home.css';
@@ -12,8 +12,8 @@ function Profesores() {
         // eslint-disable-next-line no-unused-vars
         const cargarProfesores = async () => {
             try {
-                const querySnapshot = await getDoc(collection(db, 'profesores'));
-                const profesoresData = querySnapshot.getDocs.map(doc => ({
+                const querySnapshot = await getDocs(collection(db, 'profesores'));
+                const profesoresData = querySnapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
                 }));
@@ -24,6 +24,7 @@ function Profesores() {
             }
             setLoading(false);
         };
+        cargarProfesores();
     }, []);
     
      if (loading) {

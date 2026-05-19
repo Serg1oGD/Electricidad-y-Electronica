@@ -40,11 +40,11 @@ function Header() {
                 <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/" onClick={() => setIsMenuOpen(false)}>Inicio</Link>
                     <Link to="/carrera" onClick={() => setIsMenuOpen(false)}>Acerca de la Carrera</Link>
-                    <Link to="/plan-estucios" onClick={() => setIsMenuOpen(false)}>Plan de Estudios</Link>
+                    <Link to="/plan-estudios" onClick={() => setIsMenuOpen(false)}>Plan de Estudios</Link>
                     <Link to="/profesores" onClick={() => setIsMenuOpen(false)}>Profesores</Link>
                     <Link to="/laboratorios" onClick={() => setIsMenuOpen(false)}>Laboratios</Link>
                     <Link to="/avisos" onClick={() => setIsMenuOpen(false)}>Avisos</Link>
-                    <Link to="/contactos" onClick={() => setIsMenuOpen(false)}>Contastos</Link>
+                    <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>Contastos</Link>
 
                     {currentUser ? (
                         <button onClick={handleLogout} className="logout-btn">

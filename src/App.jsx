@@ -4,7 +4,6 @@ import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import './App.css'
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminPanel from './pages/AdminPanel';
 import Carrera from './pages/Carrera';
@@ -13,6 +12,8 @@ import Profesores from './pages/Profesores';
 import Laboratorios from './pages/Laboratorios';
 import Avisos from './pages/Avisos';
 import Contacto from './pages/Contacto';
+
+import './App.css'
 
 function App() {
   return (
