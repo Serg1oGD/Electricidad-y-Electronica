@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, LogIn, LogOut } from 'lucide-react';
+import { Menu, X, LogIn, LogOut, Settings } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import './Header.css';
 
@@ -26,7 +26,7 @@ function Header() {
         <header className="header">
             <div className="header-conteiner">
                 <div className="logo-section">
-                    <img src="/logo_tec.png" alt="TecNM" className="logo" />
+                    <img src="/tec_.png" alt="TecNM" className="logo" />
                     <div className="title-section">
                         <h1>Ingenería de Elétricidad y Elctrónica</h1>
                         <p>TecNM Campus Reynosa</p>
@@ -47,16 +47,24 @@ function Header() {
                     <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>Contastos</Link>
 
                     {currentUser ? (
-                        <button onClick={handleLogout} className="logout-btn">
-                            <LogOut size={18}>
-                                Cerrar Sesion
-                            </LogOut>
-                        </button>
+                        <>
+                            <Link 
+                            to="/admin"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="admin-btn"
+                            >
+                            <Settings size={18} />
+                                Admin
+                            </Link>
+                            <button onClick={handleLogout} className="logout-btn">
+                                <LogOut size={18} />
+                                    Cerrar Sesion
+                            </button>
+                        </>
                     ) : (
                         <Link to="/login" onClick={() => setIsMenuOpen(false)} className="login-link">
-                            <LogIn size={18}>
+                            <LogIn size={18} />
                                 Maestros
-                            </LogIn>
                         </Link>
                     )}
                 </nav>

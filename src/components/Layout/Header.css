@@ -74,7 +74,23 @@
   padding: 0.5rem;
 }
 
-/* Estilos para autenticación */
+.admin-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.admin-btn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.5);
+  border-bottom: 2px solid rgba(16, 185, 129, 0.5);
+}
+
 .login-link {
   display: flex;
   align-items: center;
@@ -87,12 +103,12 @@
 
 .login-link:hover {
   background: rgba(255, 255, 255, 0.3);
-  border-bottom: none !important;
+  border-bottom: none;
 }
 
 .logout-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.3);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -103,11 +119,11 @@
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: 1rem;
-  white-space: nowrap;
 }
 
 .logout-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(220, 38, 38, 0.3);
+  border-color: rgba(220, 38, 38, 0.5);
 }
 
 /* Tablet - 1024px y menos */
@@ -238,4 +254,29 @@
     padding: 0.875rem 1rem;
     font-size: 0.9rem;
   }
+}
+
+@media (max-width: 768px){
+  .admin-btn{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    justify-content: flex-start;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  .admin-btn:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .logout-btn {
+    width: calc(100% - 3rem);
+    margin: 1rem 1.5rem;
+    justify-content: center;
+  }
+  
 }
